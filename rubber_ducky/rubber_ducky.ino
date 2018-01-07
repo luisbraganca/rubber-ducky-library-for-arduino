@@ -211,13 +211,22 @@ void rdOpenCommandPrompt(boolean admin) {
   if (admin) {
     rdGuiCombination('x');
     Keyboard.print(F("a"));
-    rdLongerDelay();
-    rdTypeKey(KEY_LEFT_ARROW);
-    rdDelay();
-    Keyboard.print(F(" "));
+    rdAcceptWindowsSmartScreen();
   } else {
     rdRun("cmd");
   }
+}
+
+/**
+ * Accepts the windows smart screen to grant admin permissions.
+ */
+void rdAcceptWindowsSmartScreen() {
+  // Wait untill smart screen shows up
+  delay(5000);
+  rdTypeKey(KEY_LEFT_ARROW);
+  rdDelay();
+  Keyboard.print(F(" "));
+  rdDelay();
 }
 
 /*********************
