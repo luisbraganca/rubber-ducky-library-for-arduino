@@ -10,20 +10,22 @@ Arduino Leonardo Mini with USB adapter
 
 ## What's a Rubber Ducky?
 
-"The USB Rubber Ducky is a keystroke injection tool disguised as a generic flash drive. Computers recognize it as a regular keyboard and accept pre-programmed keystroke payloads at over 1000 words per minute."
-- [Hak5 Gear](https://hakshop.com/products/usb-rubber-ducky-deluxe)
+"The USB Rubber Ducky is a keystroke injection tool disguised as a generic flash drive. Computers recognize it as a regular keyboard and accept pre-programmed keystroke payloads at over 1000 words per minute." Taken from [Hak5 Gear](https://hakshop.com/products/usb-rubber-ducky-deluxe).
 
 ## Why using an Arduino instead of a Rubber Ducky?
 
 ### Price
 
 Rubber Ducky: $44.99
+
 Arduino Leonardo Mini: $4.22 (no it's not a mistake)
 
 ### Customization
 
 Rubber Ducky: ???
+
 Arduino Leonardo Mini: Switches, Memory Card, Wifi, etc...
+
 If you're interested in building one from scratch with switches and such, take a look at [Seytonic's youtube channel](https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA), or you can simply buy a pre-built one from [his store](https://shop.malduino.com).
 
 ## Technical details
