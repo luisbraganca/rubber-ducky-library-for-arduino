@@ -1,12 +1,12 @@
 # Rubber Ducky library for Arduino
 
-A library with scripts to use an arduino as a rubber ducky
+An Arduino library that allows you to use a cheap Arduino (Leonardo) as a Rubber Ducky 
 
 ## Device used
 
 Arduino Leonardo Mini with USB adapter
 
-![Arduino leonardo mini with USB adapter](https://raw.githubusercontent.com/luisbraganca/rubber-ducky-library-for-arduino/master/Screenshots/device.jpg)
+![Arduino leonardo mini with USB adapter](https://raw.githubusercontent.com/luisbraganca/rubber-ducky-library-for-arduino/master/Photos/device.jpg)
 
 ## What's a Rubber Ducky?
 
