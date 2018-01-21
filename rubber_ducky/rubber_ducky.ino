@@ -8,7 +8,7 @@
  * Prepares the virtual keyboard.
  * This method should be the first instruction on the setup code block.
  */
-void init() {
+void start() {
   Keyboard.begin();
   rdLongerDelay();
 }
@@ -234,7 +234,7 @@ void rdAcceptWindowsSmartScreen() {
  *********************/
 
 void setup() {
-  init();
+  start();
 
   // @TODO: Your code goes here.
 
