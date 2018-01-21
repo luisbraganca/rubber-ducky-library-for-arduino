@@ -243,6 +243,10 @@ void rdAcceptWindowsSmartScreen() {
 void setup() {
   start();
 
+  // NOTE, when uploading this script to your arduino
+  // it will be automatically ran, to abort the shutdown you have
+  // 60 seconds, open command prompt and type:
+  // shutdown -a
   rdOpenCommandPrompt();
   rdHideWindow();
   rdWriteText("shutdown /s /t 60");
