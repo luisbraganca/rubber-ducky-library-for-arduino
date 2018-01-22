@@ -38,6 +38,11 @@ void rdLongerDelay() {
   for(int i = 0; i < 5; i++) rdDelay();
 }
 
+void rdWriteText(String text) {
+  Keyboard.print(text);
+  rdDelay();
+}
+
 /**
  * Used to type non-alphanumeric keys.
  */
@@ -101,10 +106,12 @@ void rdHideWindow() {
   rdAltCombination(' ');
   Keyboard.print(F("M"));
   rdDelay();
+  Keyboard.press(KEY_DOWN_ARROW);
   // 100 should be enough to guarantee the window is as low as possible
   // also please notice that 100 is not the real number of strokes since
   // some of the strokes are ignored.
-  for(int i = 0; i < 100; i++) rdTypeKey(KEY_DOWN_ARROW);
+  for(int i = 0; i < 10; i++) rdLongerDelay();;
+  Keyboard.release(KEY_DOWN_ARROW);
   // return repositions the cursor back to its original position
   rdTypeKey(KEY_RETURN);
 }
@@ -222,11 +229,35 @@ void rdOpenCommandPrompt(boolean admin) {
  */
 void rdAcceptWindowsSmartScreen() {
   // Wait untill smart screen shows up
-  delay(5000);
+  rdLongerDelay();
   rdTypeKey(KEY_LEFT_ARROW);
   rdDelay();
   Keyboard.print(F(" "));
   rdDelay();
+}
+
+/**
+ * Changes the keyboard layout, if the computer only
+ * has 1 keyboard layout this key combination won't
+ * do anything.
+ */
+void rdChangeKeyboardLayout() {
+  rdAltCombination(KEY_LEFT_SHIFT);
+}
+
+/**
+ * It runs one or multiple powershell scripts,
+ * to run multiple scripts, separate them with a new line "\n" char.
+ */
+void rdPowershellRun(String scripts) {
+  char delimiter = '\n';
+  String finalScript = "powershell ";
+  while (scripts.indexOf('\n') > 0) {
+    finalScript = finalScript + "(" + scripts.substring(0, scripts.indexOf('\n')) + ") ; ";
+    scripts = scripts.substring(scripts.indexOf('\n') + 1);
+  }
+  finalScript = finalScript + "(" + scripts + ")";
+  rdRun(finalScript);
 }
 
 /*********************
@@ -237,7 +268,7 @@ void setup() {
   start();
 
   // @TODO: Your code goes here.
-
+  
   finish();
 }
 
