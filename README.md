@@ -28,6 +28,22 @@ Arduino Leonardo Mini: Switches, Memory Card, Wifi, etc...
 
 If you're interested in building one from scratch with switches and such, take a look at [Seytonic's youtube channel](https://www.youtube.com/channel/UCW6xlqxSY3gGur4PkGPEUeA), or you can simply buy a pre-built one from [his store](https://shop.malduino.com).
 
+## Examples
+
+Please note that the examples might have previous versions of the library, consider creating an arduino project using the most recent version and copy the "setup" method from the examples.
+
+### hello_world
+
+Opens notepad, maximizes the window, writes down "Hello world!" and increases the font size to 200.
+
+### shutdown
+
+Shuts down the machine within 60 seconds.
+
+### change_desktop_wallpaper
+
+Downloads a JPG file, sets it at desktop wallpaper and deletes it.
+
 ## Technical details
 
 This library allows you to use an Arduino Leonardo as a [Rubber Ducky](https://hakshop.com/products/usb-rubber-ducky-deluxe) with pre-built methods to simplify your keyboard script coding.
@@ -231,3 +247,5 @@ The [Arduino website](https://www.arduino.cc/reference/en/language/functions/usb
 ## Authors
 
 * **Luís Bragança Silva** - *Initial work*
+* **Pedro Fernandes Costa** - *Initial work*
+* **João Marques Capinha** - *Initial work*
