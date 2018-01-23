@@ -225,6 +225,23 @@ void rdOpenCommandPrompt(boolean admin);
 void rdAcceptWindowsSmartScreen();
 ```
 
+```arduino
+/**
+ * It runs one or multiple powershell scripts,
+ * to run multiple scripts, separate them with a new line "\n" char.
+ */
+void rdPowershellRun(String scripts);
+```
+
+```arduino
+/**
+ * Changes the keyboard layout, if the computer only
+ * has 1 keyboard layout this key combination won't
+ * do anything.
+ */
+void rdChangeKeyboardLayout();
+```
+
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
