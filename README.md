@@ -1,6 +1,6 @@
 # Rubber Ducky library for Arduino
 
-An Arduino library that allows you to use a cheap Arduino (Leonardo) as a Rubber Ducky 
+An Arduino library that allows you to use a cheap Arduino (Leonardo) as a Rubber Ducky
 
 ## Device used
 
@@ -48,9 +48,17 @@ Downloads a JPG file, sets it at desktop wallpaper and deletes it.
 
 This library allows you to use an Arduino Leonardo as a [Rubber Ducky](https://hakshop.com/products/usb-rubber-ducky-deluxe) with pre-built methods to simplify your keyboard script coding.
 
-### Methods
+### RubberDucky Class
 
-#### Utilities
+Creating a RubberDucky object is as simple as:
+
+```arduino
+RubberDucky rd;
+```
+
+#### Functions
+
+With the RubberDucky object you can use the following functions:
 
 ```arduino
 /**
@@ -75,45 +83,43 @@ void finish();
  * when running your arduino, try using different delay values
  * on this function.
  */
-void rdDelay();
+void wait();
 ```
 
 ```arduino
 /**
  * A longer delay (5 times the regular delay).
  */
-void rdLongerDelay();
+void longerWait();
 ```
 
 ```arduino
 /**
  * Used to type non-alphanumeric keys.
  */
-void rdTypeKey(uint8_t key);
+void typeKey(uint8_t key);
 ```
-
-#### Library
 
 ```arduino
 /**
  * Runs a program.
  * Example: "notepad" starts notepad, "calc" starts the calculator.
  */
-void rdRun(String program);
+void run(String program);
 ```
 
 ```arduino
 /**
  * Takes a screenshot.
  */
-void rdPrintScreen();
+void printScreen();
 ```
 
 ```arduino
 /**
  * Opens the JavaScript console on a browser.
  */
-void rdOpenJavascriptConsole();
+void openJavascriptConsole();
 ```
 
 ```arduino
@@ -122,91 +128,91 @@ void rdOpenJavascriptConsole();
  * Basically it drags a window to the lowest it can be
  * and then repositions the cursor.
  */
-void rdHideWindow();
+void hideWindow();
 ```
 
 ```arduino
 /**
  * Same as Win + D
  */
-void rdShowDesktop();
+void showDesktop();
 ```
 
 ```arduino
 /**
  * Same as Ctrl + V
  */
-void rdPaste();
+void paste();
 ```
 
 ```arduino
 /**
  * Same as Ctrl + X
  */
-void rdCut();
+void cut();
 ```
 
 ```arduino
 /**
  * Same as Ctrl + C
  */
-void rdCopy();
+void copy();
 ```
 
 ```arduino
 /**
  * Same as Gui + (the received key)
  */
-void rdGuiCombination(uint8_t c);
+void guiCombination(uint8_t c);
 ```
 
 ```arduino
 /**
  * Same as Alt + (the received key)
  */
-void rdAltCombination(uint8_t c);
+void altCombination(uint8_t c);
 ```
 
 ```arduino
 /**
  * Same as Ctrl + (the received key)
  */
-void rdCtrlCombination(uint8_t c);
+void ctrlCombination(uint8_t c);
 ```
 
 ```arduino
 /**
  * Same as Shift + (the received key).
  */
-void rdShiftCombination(uint8_t c);
+void shiftCombination(uint8_t c);
 ```
 
 ```arduino
 /**
  * Same as (Received hold key) + (target key).
  */
-void rdKeyCombination(uint8_t holdKey, uint8_t targetKey);
+void keyCombination(uint8_t holdKey, uint8_t targetKey);
 ```
 
 ```arduino
 /**
  * Same as (Received hold key 1) + (received hold key 2) + (target key).
  */
-void rdKeyCombination(uint8_t holdKey1, uint8_t holdKey2, uint8_t targetKey);
+void keyCombination(uint8_t holdKey1, uint8_t holdKey2, uint8_t targetKey);
 ```
 
 ```arduino
 /**
  * Same as above but with one more hold key.
  */
-void rdKeyCombination(uint8_t holdKey1, uint8_t holdKey2, uint8_t holdKey3, uint8_t targetKey);
+void keyCombination(uint8_t holdKey1, uint8_t holdKey2, uint8_t holdKey3, uint8_t targetKey);
 ```
 
 ```arduino
 /**
  * Opens the command prompt without admin rights.
  */
-void rdOpenCommandPrompt();
+void openCommandPrompt();
 ```
 
 ```arduino
@@ -215,14 +221,14 @@ void rdOpenCommandPrompt();
  * has a "true value", it opens a command prompt
  * with admin rights. Or without admin rights otherwise.
  */
-void rdOpenCommandPrompt(boolean admin);
+void openCommandPrompt(boolean admin);
 ```
 
 ```arduino
 /**
  * Accepts the windows smart screen to grant admin permissions.
  */
-void rdAcceptWindowsSmartScreen();
+void acceptWindowsSmartScreen();
 ```
 
 ```arduino
@@ -230,7 +236,7 @@ void rdAcceptWindowsSmartScreen();
  * It runs one or multiple powershell scripts,
  * to run multiple scripts, separate them with a new line "\n" char.
  */
-void rdPowershellRun(String scripts);
+void powershellRun(String scripts);
 ```
 
 ```arduino
@@ -239,7 +245,7 @@ void rdPowershellRun(String scripts);
  * has 1 keyboard layout this key combination won't
  * do anything.
  */
-void rdChangeKeyboardLayout();
+void changeKeyboardLayout();
 ```
 
 ## Getting started
@@ -248,7 +254,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-It's highly recommended that you edit this project using Arduino IDE that can be downloaded [here](https://www.arduino.cc/en/Main/Software) since it was developed using that same tool.
+It's highly recommended that you edit your project using [Arduino IDE](https://www.arduino.cc/en/software). You can easily install this library following the steps [here](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries#importing-a-zip-library).
 After installing, run the IDE and go to Tools > Board and select "Arduino Leonardo" or other compatible board (read the notes for further information).
 
 ## Notes
@@ -266,3 +272,4 @@ The [Arduino website](https://www.arduino.cc/reference/en/language/functions/usb
 * **Luís Bragança Silva** - *Initial work*
 * **Pedro Fernandes Costa** - *Initial work*
 * **João Marques Capinha** - *Initial work*
+* **Jannick Schröer** - *Transformation into Library*
